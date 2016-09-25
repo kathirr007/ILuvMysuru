@@ -1,8 +1,8 @@
-# ILuv-Mysuru_dev_WorkFlow
+# ILuvMysuru Build  for Apk
 
-[![Build Status](https://travis-ci.org/bullhorn/career-portal.svg)](https://github.com/kathirr007/ILuv-Mysuru_dev_WorkFlow)
+[![Build Status](https://travis-ci.org/bullhorn/career-portal.svg)](https://github.com/kathirr007/ILuvMysuru)
 
-**[ILuv Mysuru](https://github.com/kathirr007/ILuv-Mysuru_dev_WorkFlow)** is the prject of an app for the Namma Mysuru about the latest updates of Mysuru. Build from website to app Android app.
+**[ILuv Mysuru](https://github.com/kathirr007/ILuvMysuru)** is the prject of an app for the Namma Mysuru about the latest updates of Mysuru. Build from website to app Android app.
 
 ## To Build and Run the project
 
@@ -11,7 +11,7 @@ In order to Check App functionality, ensure that you have **[Git](http://git-scm
 Clone a copy of the repo:
 
 ```
-git clone https://github.com/kathirr007/ILuv-Mysuru_dev_WorkFlow.git
+git clone https://github.com/kathirr007/ILuvMysuru.git
 ```
 
 Change to the Project directory:
