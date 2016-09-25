@@ -17,9 +17,9 @@
     <platform name="winphone"/>
     <preference name="phonegap-version" value="cli-6.3.0" />
     <preference name="orientation" value="portrait" />
-    <preference name="fullscreen" value="true" />
+    <preference name="fullscreen" value="false" />
     <preference name="webviewbounce" value="false" />
-    <preference name="DisallowOverscroll" value="true" />
+    <preference name="DisallowOverscroll" value="false" />
     <preference name="disallowOverscroll" value="true" />
     <preference name="target-device" value="universal"/>
     <preference name="deployment-target" value="7.0"/>
