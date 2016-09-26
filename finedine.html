@@ -17,6 +17,7 @@
 <script type="text/javascript" src="index.js"></script>
 <!-- <script src="master/js/jquery-ui.min.js"></script> -->
 <script src="master/js/jquery-1.12.4.min.js"></script>
+<script src="master/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="master/js/jssor.slider-21.1.5.min.js"></script> 
 <!-- use jssor.slider-21.1.5.debug.js instead for debug --> 
 <script type="text/javascript" src="master/js/carousel.js"></script>
@@ -78,7 +79,7 @@
         <div><img src="master/images/history.png"/></div>
         <div style=" margin-left:40px; margin-top:-48px;">History & Geography</div>
       </li>
-      </a> <a href="#">
+      </a> <a href="emergencycontacts.html">
       <li class="menuli">
         <div><img src="master/images/contact.png"/></div>
         <div style=" margin-left:40px; margin-top:-48px;">Emergency Contacts</div>
@@ -94,7 +95,7 @@
   </div>
 <div id="preheader">
     <ul>
-      <div class="jumbotron">
+      <div class="my-jumbotron">
         <li style="width:55%;">
           <div class="icon-menu"> <i class="fa fa-bars"></i><span style="padding-left:10px;">ILuv Mysuru</span></div>
         </li>
@@ -111,7 +112,7 @@
 </div>
 <div class="clear"></div>
 <!--container-->
-<div class="container">
+<div class="my-container">
   <div class="main clearfix">
   <div class="search-result"></div>
     <div id="heading" class="clearfix"> <span style="font-size:16px; color:#ffffff; line-height:30px; font-family: 'Courgette', cursive;">Fine Dine Restaurants</span> </div>
@@ -175,11 +176,7 @@ function getstars(ratingstars){
 	};
 	
 // var actualRating = getstars(ratingstars);
-		
 
-
-	
-console.log(ratingstar);
 	if (gall.length === 0) {
 	thumbImage = "master/images/noimg.png"; }
 	else {
@@ -190,11 +187,6 @@ console.log(ratingstar);
     out += "</ul></div></div></div><div class=\"clear\"></div><div class=\"clear\"></div></a>";
     out += "</div>";
 }
-
-
-		// for(i=0; i < ratingstars; i++) {
-		// 	ratingstar += '<img src="master/images/ratingstar.png" alt="" />'
-		// }
 
 
 
@@ -238,6 +230,25 @@ function buildSlider(sliderImagesList){
 		nearestplaces += '</ul></div>'
 
 $(nearestplaces).insertAfter("#id05 h2");
+$(function readmore(){
+var details = $('#id04 #details');	
+console.log(details);
+$(details).each(function(event){
+	var max_length = 150; 
+	if($(this).html().length > max_length){
+			var short_content 	= $(this).html().substr(0,max_length);
+			var long_content	= $(this).html().substr(max_length);
+			$(this).html(short_content+
+						 '<a href="#" class="read_more"><br/>Read More</a>'+
+						 '<span class="more_text" style="display:none;">'+long_content+'</span>');
+ 			$(this).find('a.read_more').click(function(event){ 
+				event.preventDefault(); 
+				$(this).hide();
+				$(this).parents('.item').find('.more_text').show();
+		 	});
+		}
+});
+});
 
 out2 += "<p style=\"color:#b65c39; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold; padding:10px;\">" + arr[idx].title + "</p></div>";
 out2 += "</div>";
@@ -274,21 +285,41 @@ $(document).on("keyup","input[name='q']",function(){
 	}
 	else{
 		$.each(arr,function(i,item){
-			var searchTitle = arr[i].title.toLowerCase();
-			console.log(searchTitle);
+			var searchTitle = arr[i].title.toLowerCase(),
+				gall = arr[i].galleries,
+				thumbImage;
+				ratingstars = arr[i].ratingstar;
+				
+console.log(searchTitle);
+
+function getstars(ratingstars){
+				ratingstar = "";
+					for (j=0; j < ratingstars; j++) {
+						ratingstar += '<img src="master/images/ratingstar.png" alt="" />';
+					}
+				return ratingstar;
+				};
+
+				if (gall.length === 0) {
+				thumbImage = "master/images/noimg.png"; }
+				else {
+				thumbImage = encodeURI(arr[i].galleries[0].img_path);
+				}
+
 			if(searchTitle.indexOf(searchQuery) != -1){
 				searchResult += '<a href=' + pathname + 'detail.html?pid=' + arr[i].placeid + ' style="text-decoration:none;">\
-				<div id="placeblocks">\
-					<div style="background-color:rgba(250, 250, 250, 1.0);">\
-						<div class="text">\
-							<ul>\
-							<li style="width:40%;">\
-								<img src="' +arr[i].galleries[0].img_name+' " alt="" width="125" height="75" class="img" style="border:2px solid #d1cece;">\
-							</li>\
-							<li style="width:60%; line-height:18px;">\
-								<span style="color:#448802; font-family:Abel, sans-serif; font-size:16px; font-weight:bold;"> "'+arr[i].title +'"</span><br>\
-								<span style="color:#222222; font-family:Abel, sans-serif; font-size:14px;"> "'+arr[i].address +'"</span>\
-							</li>';
+								<div id="placeblocks">\
+									<div style="background-color:rgba(250, 250, 250, 1.0);">\
+										<div class="text">\
+											<ul>\
+											<li style="width:40%;">\
+												<img src="' +thumbImage+' " alt="" width="125" height="75" class="img" style="border:2px solid #d1cece;">\
+											</li>\
+											<li style="width:60%; line-height:18px;">\
+												<span style="color:#448802; font-family:Abel, sans-serif; font-size:16px; font-weight:bold;"> "'+arr[i].title +'"</span><br>\
+												<span style="color:#222222; font-family:Abel, sans-serif; font-size:14px;"> "'+arr[i].address +'"</span>\
+												<div style="color:#000; padding-top:15px;"><ul style="float:left;"><li><img src="master/images/adventure.png"></li><li style="padding-left:15px;">'+getstars(ratingstars)+'</li></ul></div>\
+											</li>';
 				
 				searchResult += '</ul></div></div></div><div class="clear"></div><div class="clear"></div></a>';
 			}
@@ -309,6 +340,27 @@ document.getElementById("id01").innerHTML = out;
 }
 }
 
+
+
+// $(function(){
+// var details = $('#id04 #details').text();	
+// console.log(details);
+// $(details).each(function(event){
+// 	var max_length = 150; 
+// 	if($(this).html().length > max_length){
+// 			var short_content 	= $(this).html().substr(0,max_length);
+// 			var long_content	= $(this).html().substr(max_length);
+// 			$(this).html(short_content+
+// 						 '<a href="#" class="read_more"><br/>Read More</a>'+
+// 						 '<span class="more_text" style="display:none;">'+long_content+'</span>');
+//  			$(this).find('a.read_more').click(function(event){ 
+// 				event.preventDefault(); 
+// 				$(this).hide();
+// 				$(this).parents('.item').find('.more_text').show();
+// 		 	});
+// 		}
+// });
+// });
 
 
 
