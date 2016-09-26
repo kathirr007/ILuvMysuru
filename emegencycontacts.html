@@ -17,7 +17,6 @@
 <script type="text/javascript" src="index.js"></script>
 <!-- <script src="master/js/jquery-ui.min.js"></script> -->
 <script src="master/js/jquery-1.12.4.min.js"></script>
-<script src="master/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="master/js/jssor.slider-21.1.5.min.js"></script> 
 <!-- use jssor.slider-21.1.5.debug.js instead for debug --> 
 <script type="text/javascript" src="master/js/carousel.js"></script>
@@ -95,7 +94,7 @@
   </div>
 <div id="preheader">
     <ul>
-      <div class="my-jumbotron">
+      <div class="jumbotron">
         <li style="width:55%;">
           <div class="icon-menu"> <i class="fa fa-bars"></i><span style="padding-left:10px;">ILuv Mysuru</span></div>
         </li>
@@ -121,50 +120,52 @@
       
       <!-- You only need this form and the form-register.css -->
       
-      <form class="form-register" method="post" action="#">
-        <div class="form-register-with-email">
-          <div class="form-white-background">
-            <div class="form-row">
-              <label> <span style="color:#f7412f;font-family: 'Abel', sans-serif;font-size:16px;">Name</span>
-                <input type="text" name="name" required>
-              </label>
-            </div>
-            <div class="form-row">
-              <label> <span style="color:#f7412f;font-family: 'Abel', sans-serif;font-size:16px;">Email</span>
-                <input type="email" name="pemail" required>
-              </label>
-            </div>
-            <div class="form-row">
-              <label> <span style="color:#f7412f;font-family: 'Abel', sans-serif;font-size:16px;">Mobile</span>
-                <input type="text" name="mobile" required>
-              </label>
-            </div>
-            <div class="form-row">
-              <label> <span style="color:#f7412f;font-family: 'Abel', sans-serif;font-size:16px;">Feedback</span>
-                <textarea rows="6" cols="28" name="feedback" required></textarea>
-              </label>
-            </div>
-            <div class="form-row">
-              <button type="submit">Send</button>
-            </div>
-          </div>
+     <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+            Collapsible Group 1</a>
+          </h4>
         </div>
-      </form>
+        <div id="collapse1" class="panel-collapse collapse in">
+          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.</div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+            Collapsible Group 2</a>
+          </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.</div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+            Collapsible Group 3</a>
+          </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+          <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.</div>
+        </div>
+      </div>
+    </div> 
     </div>
-    
-    <!-- <ul>
-            
-            <li style="width:30%;"><a href="#"><img src="master/images/garden.jpg" alt="" width="125" class="img" style="border:2px solid #fff;"></a></li>
-            
-            <li style="width:60%; line-height:18px;"><span class="heading1"><a href="placesofinterestdetail.html" style="text-decoration:none; color:#e6e814;">Brindavan Gardens</a></span> <br>
-              <span class="address1">KRS Dam Road, Mysuru, <br>
-              Karnataka 571607<br>
-              <em>Mon Aug 08 2016 at 10:00 am</em></span></li>
-              
-            <li style="width:10%;"><a href="#"><img src="master/images/hotellocationicon.png" alt="" width="100%" class="image"></a></li>
-            
-          </ul>--> 
-    
+
   </div>
 </div>
 </body>
