@@ -1,4 +1,4 @@
-# ILuvMysuru Build  for Apk
+# ILuvMysuru Build  for App
 
 [![Build Status](https://travis-ci.org/bullhorn/career-portal.svg)](https://github.com/kathirr007/ILuvMysuru)
 
