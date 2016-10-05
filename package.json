@@ -1,0 +1,21 @@
+{
+  "name": "iluvmysuru",
+  "version": "1.0.0",
+  "description": "ILuvMysuru Build for App Development",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kathirr007/ILuvMysuru.git"
+  },
+  "author": "Theorem India Pvt.Ltd.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kathirr007/ILuvMysuru/issues"
+  },
+  "homepage": "https://github.com/kathirr007/ILuvMysuru#readme",
+  "devDependencies": {
+    "browser-sync": "^2.17.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1"
+  }
+}

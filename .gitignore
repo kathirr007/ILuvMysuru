@@ -33,6 +33,9 @@ master/json/*_*.json
 msater/*_*.html
 *_mod*
 #development/
+README.md
+.gitignore
+
 
 .sass-cache/
 *.css.map
