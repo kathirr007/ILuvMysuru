@@ -9,10 +9,8 @@
 <meta name="author" content="">
 <title>ILuv Mysuru | Main</title>
 <link href="master/css/style.css" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet"> -->
 <!--<link href="master/css/media.css" rel="stylesheet">-->
-<link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans+Condensed:700,300,300italic|Open+Sans:400,300italic,400italic,600,600italic,700,700italic,800,800italic|PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'/>
 <!-- <script type="text/javascript" src="cordova.js"></script> -->
 <script type="text/javascript" src="index.js"></script>
 <!-- <script src="master/js/jquery-ui.min.js"></script> -->
@@ -28,9 +26,7 @@
 
 
    
-<link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans+Condensed:700,300,300italic|Open+Sans:400,300italic,400italic,600,600italic,700,700italic,800,800italic|PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'/>
+
 </head>
 
 <body>
@@ -79,7 +75,26 @@
         <div><img src="master/images/history.png"/></div>
         <div style=" margin-left:40px; margin-top:-48px;">History & Geography</div>
       </li>
-      </a> <a href="emergencycontacts.html">
+      </a> 
+      <a href="yogacenter.html">
+      <li class="menuli">
+        <div><img src="master/images/yoga.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Yoga Centers</div>
+      </li>
+      </a>
+      <a href="localfavorites.html">
+      <li class="menuli">
+        <div><img src="master/images/localfav.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Local's Favourite</div>
+      </li>
+      </a>
+      <a href="itinerary.html">
+      <li class="menuli">
+        <div><img src="master/images/itinerary.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Itinerary</div>
+      </li>
+      </a>
+      <a href="emergencycontacts.html">
       <li class="menuli">
         <div><img src="master/images/contact.png"/></div>
         <div style=" margin-left:40px; margin-top:-48px;">Emergency Contacts</div>
@@ -119,10 +134,10 @@
     <div class="clear"></div>
     <div id="id01"></div>
     <script>
-var xmlhttp = new XMLHttpRequest(),
-	path = location.pathname.split(".")[0].split("/").pop(),
-	pathname = path.includes("detail") ? path.split("detail")[0] : path,
-	pathPid = location.href.slice(-16),
+	var xmlhttp = new XMLHttpRequest(),
+	path = location.pathname.split(".")[0].split("/").pop();
+	var pathname = "upcomingevents";
+	pathPid = location.href.slice(-16);
 	url = "master/json/" + pathname + ".json";
 
 // custom styles
@@ -132,13 +147,12 @@ var xmlhttp = new XMLHttpRequest(),
 console.log(pathname);console.log(pathPid);console.log(url);
 
 xmlhttp.onreadystatechange=function() {
-	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+	if (xmlhttp.readyState == 4) {
 		myFunction(xmlhttp.responseText);
 	}
 }
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
-
 function myFunction(response) {
 var arr = JSON.parse(response),
 	i, ratingstar, out = "<div>", out2 = "<div>", out3 = "<div id=\"details\">", maps = "<div id=\"map-canvas\">";
@@ -146,7 +160,9 @@ var arr = JSON.parse(response),
 for(i = 0; i < arr.length; i++) {
 var gall = arr[i].galleries,
 	thumbImage;
-	ratingstars = arr[i].ratingstar;
+	ratingstars = arr[i].ratingstar,
+	kms = arr[i].nearkm,
+	kms = kms ? kms : "- ";
 	
 	
 function getstars(ratingstars){
@@ -158,26 +174,17 @@ function getstars(ratingstars){
 	};
 	
 // var actualRating = getstars(ratingstars);
-		
 
-
-	
-console.log(ratingstar);
 	if (gall.length === 0) {
 	thumbImage = "master/images/noimg.png"; }
 	else {
 	thumbImage = encodeURI(arr[i].galleries[0].img_path);
 	}
-    out += "<a href=" + pathname + "detail.html?pid=" + arr[i].placeid + " style=\"text-decoration:none; \"><div id=\"placeblocks\"><div style=\"background-color:rgba(250, 250, 250, 1.0);\"><div class=\"text\"><ul><li style=\"width:40%;\"><img src=" + thumbImage + " alt=\"\" width=\"125\" height=\"75\" class=\"img\" style=\"border:2px solid #d1cece;\"></li>";
-    out += "<li style=\"width:60%; line-height:18px;\"><span style=\"color:#448802; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold;\"> "+arr[i].title +"</span><br><span style=\"color:#222222; font-family: 'Abel', sans-serif; font-size:14px; \"> "+arr[i].address +"</span><div style=\"color:#000; padding-top:15px;\"><ul style=\"float:left;\"><li><img src=\"master\/images\/adventure.png\"></li><li style=\"padding-left:15px;\">"+getstars(ratingstars)+"</li></ul></div></li>";
+   out += "<a href=\"" + pathname + "detail.html?pid=" + arr[i].placeid + "\" style=\"text-decoration:none;\"><div id=\"placeblocks\"><div style=\"background-color:rgba(250, 250, 250, 1.0);\"><div class=\"text\"><ul><li style=\"width:40%;\"><img src=" + thumbImage + " alt=\"\" width=\"125\" height=\"75\" class=\"img\" style=\"border:2px solid #d1cece;\"></li>";
+    out += "<li style=\"width:60%; line-height:18px;\"><span style=\"color:#448802; font-family: \"Abel\", sans-serif; font-size:16px; font-weight:bold;\">" +arr[i].title + "</span><br><span style=\"color:#222222; font-family: \"Abel\", sans-serif; font-size:14px;\">" +arr[i].address + "</span><div style=\"color:#000; padding-top:15px;\"><ul style=\"float:left;\"><li>" + getstars(ratingstars)+ "</li><li style=\"padding-left:15px;\">"+kms+ "Kms from city</li></ul></div></li>";
     out += "</ul></div></div></div><div class=\"clear\"></div><div class=\"clear\"></div></a>";
     out += "</div>";
 }
-
-
-		// for(i=0; i < ratingstars; i++) {
-		// 	ratingstar += '<img src="master/images/ratingstar.png" alt="" />'
-		// }
 
 
 
@@ -221,12 +228,31 @@ function buildSlider(sliderImagesList){
 		nearestplaces += '</ul></div>'
 
 $(nearestplaces).insertAfter("#id05 h2");
+$(function readmore(){
+var details = $('#id04 #details');	
+console.log(details);
+$(details).each(function(event){
+	var max_length = 150; 
+	if($(this).html().length > max_length){
+			var short_content 	= $(this).html().substr(0,max_length);
+			var long_content	= $(this).html().substr(max_length);
+			$(this).html(short_content+
+						 '<a href="#" class="read_more"><br/>Read More</a>'+
+						 '<span class="more_text" style="display:none;">'+long_content+'</span>');
+ 			$(this).find('a.read_more').click(function(event){ 
+				event.preventDefault(); 
+				$(this).hide();
+				$(this).parents('.item').find('.more_text').show();
+		 	});
+		}
+});
+});
 
-out2 += "<p style=\"color:#b65c39; font-family: 'Abel', sans-serif; font-size:16px; font-weight:bold; padding:10px;\">" + arr[idx].title + "</p></div>";
-out2 += "</div>";
-out3 += "<div>"+ $('<div/>').html(arr[idx].details).text() +"</div>";
-out3 += "</div>";
-maps += "</div>";
+out2 += '<p style="color:#b65c39; font-family: \'Abel\', sans-serif; font-weight:bold; padding:10px;">' + arr[idx].title + '</p></div>';
+out2 += '</div>';
+out3 += '<div>'+ $("<div/>").html(arr[idx].details).text() +'</div>';
+out3 += '</div>';
+maps += '</div>';
 
 
 var lati = arr[idx].lati,
@@ -257,21 +283,42 @@ $(document).on("keyup","input[name='q']",function(){
 	}
 	else{
 		$.each(arr,function(i,item){
-			var searchTitle = arr[i].title.toLowerCase();
-			console.log(searchTitle);
+			var searchTitle = arr[i].title.toLowerCase(),
+				gall = arr[i].galleries,
+				thumbImage;
+				ratingstars = arr[i].ratingstar,
+				kms = arr[i].nearkm;
+				
+console.log(searchTitle);
+
+function getstars(ratingstars){
+				ratingstar = "";
+					for (j=0; j < ratingstars; j++) {
+						ratingstar += '<img src="master/images/ratingstar.png" alt="" />';
+					}
+				return ratingstar;
+				};
+
+				if (gall.length === 0) {
+				thumbImage = "master/images/noimg.png"; }
+				else {
+				thumbImage = encodeURI(arr[i].galleries[0].img_path);
+				}
+
 			if(searchTitle.indexOf(searchQuery) != -1){
 				searchResult += '<a href=' + pathname + 'detail.html?pid=' + arr[i].placeid + ' style="text-decoration:none;">\
-				<div id="placeblocks">\
-					<div style="background-color:rgba(250, 250, 250, 1.0);">\
-						<div class="text">\
-							<ul>\
-							<li style="width:40%;">\
-								<img src="' +arr[i].galleries[0].img_name+' " alt="" width="125" height="75" class="img" style="border:2px solid #d1cece;">\
-							</li>\
-							<li style="width:60%; line-height:18px;">\
-								<span style="color:#448802; font-family:Abel, sans-serif; font-size:16px; font-weight:bold;"> "'+arr[i].title +'"</span><br>\
-								<span style="color:#222222; font-family:Abel, sans-serif; font-size:14px;"> "'+arr[i].address +'"</span>\
-							</li>';
+								<div id="placeblocks">\
+									<div style="background-color:rgba(250, 250, 250, 1.0);">\
+										<div class="text">\
+											<ul>\
+											<li style="width:40%;">\
+												<img src="' +thumbImage+' " alt="" width="125" height="75" class="img" style="border:2px solid #d1cece;">\
+											</li>\
+											<li style="width:60%; line-height:18px;">\
+												<span style="color:#448802; font-family:Abel, sans-serif; font-size:16px; font-weight:bold;"> "'+arr[i].title +'"</span><br>\
+												<span style="color:#222222; font-family:Abel, sans-serif; font-size:14px;"> "'+arr[i].address +'"</span>\
+												<div style="color:#000; padding-top:15px;"><ul style="float:left;"><li>'+getstars(ratingstars)+'</li><li>'+kms+'Kms from city</li></ul></div>\
+											</li>';
 				
 				searchResult += '</ul></div></div></div><div class="clear"></div><div class="clear"></div></a>';
 			}
@@ -282,18 +329,37 @@ $(document).on("keyup","input[name='q']",function(){
 		$(".search-result").empty().append('<h2 style="color:#FFFFFF;margin:10px 5px;">Search results related to the keyword "'+searchValue+'"</h2>'+searchResult);
 	}
 });
-if (path.includes("detail")) {
-document.getElementById("id02").innerHTML = out2;
-document.getElementById("id03").innerHTML = maps;
-document.getElementById("id04").innerHTML = out3;
-}
-else {
+//if (path.includes("detail")) {
+//document.getElementById("id02").innerHTML = out2;
+//document.getElementById("id03").innerHTML = maps;
+//document.getElementById("id04").innerHTML = out3;
+//}
+//else {
 document.getElementById("id01").innerHTML = out;
+//}
 }
-}
 
 
 
+// $(function(){
+// var details = $('#id04 #details').text();	
+// console.log(details);
+// $(details).each(function(event){
+// 	var max_length = 150; 
+// 	if($(this).html().length > max_length){
+// 			var short_content 	= $(this).html().substr(0,max_length);
+// 			var long_content	= $(this).html().substr(max_length);
+// 			$(this).html(short_content+
+// 						 '<a href="#" class="read_more"><br/>Read More</a>'+
+// 						 '<span class="more_text" style="display:none;">'+long_content+'</span>');
+//  			$(this).find('a.read_more').click(function(event){ 
+// 				event.preventDefault(); 
+// 				$(this).hide();
+// 				$(this).parents('.item').find('.more_text').show();
+// 		 	});
+// 		}
+// });
+// });
 
 
 

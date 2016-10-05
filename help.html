@@ -9,10 +9,8 @@
 <meta name="author" content="">
 <title>ILuv Mysuru | Main</title>
 <link href="master/css/style.css" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet"> -->
 <!--<link href="master/css/media.css" rel="stylesheet">-->
-<link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans+Condensed:700,300,300italic|Open+Sans:400,300italic,400italic,600,600italic,700,700italic,800,800italic|PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'/>
 <!-- <script type="text/javascript" src="cordova.js"></script> -->
 <script type="text/javascript" src="index.js"></script>
 <!-- <script src="master/js/jquery-ui.min.js"></script> -->
@@ -28,12 +26,18 @@
 
 
   
-<link href="https://fonts.googleapis.com/css?family=Abel|Baloo+Tamma|Courgette|Dosis|Poiret+One|Righteous" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700|Open+Sans+Condensed:700,300,300italic|Open+Sans:400,300italic,400italic,600,600italic,700,700italic,800,800italic|PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'/>
+
 </head>
 
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.7";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <div class="logo">
 <div class="menu"> 
     
@@ -79,7 +83,26 @@
         <div><img src="master/images/history.png"/></div>
         <div style=" margin-left:40px; margin-top:-48px;">History & Geography</div>
       </li>
-      </a> <a href="emergencycontacts.html">
+      </a> 
+      <a href="yogacenter.html">
+      <li class="menuli">
+        <div><img src="master/images/yoga.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Yoga Centers</div>
+      </li>
+      </a>
+      <a href="localfavorites.html">
+      <li class="menuli">
+        <div><img src="master/images/localfav.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Local's Favourite</div>
+      </li>
+      </a>
+      <a href="itinerary.html">
+      <li class="menuli">
+        <div><img src="master/images/itinerary.png"/></div>
+        <div style=" margin-left:40px; margin-top:-48px;">Itinerary</div>
+      </li>
+      </a>
+      <a href="emergencycontacts.html">
       <li class="menuli">
         <div><img src="master/images/contact.png"/></div>
         <div style=" margin-left:40px; margin-top:-48px;">Emergency Contacts</div>
@@ -99,11 +122,13 @@
         <li style="width:55%;">
           <div class="icon-menu"> <i class="fa fa-bars"></i><span style="padding-left:10px;">ILuv Mysuru</span></div>
         </li>
-        <li style="width:43%; text-align:right;">
-         <a href="#" style="outline:none !important;"><i class="fa fa-facebook"></i></a>
+        <li style="width:43%; text-align:right; margin-top:15px; padding-right:5px;">
+         <!--<a href="#" style="outline:none !important;"><i class="fa fa-facebook"></i></a>
          <a href="#" style="outline:none !important;"><i class="fa fa-twitter"></i></a>
-         <a href="#" style="outline:none !important;"><i class="fa fa-instagram"></i></a>
-         <a href="#" style="outline:none !important;"><i class="fa fa-tumblr"></i></a>
+         <a href="#" style="outline:none !important;"><i class="fa fa-instagram"></i></a>-->
+         <a class="fb-like" data-href="https://www.facebook.com/ILuv-Mysuru-654462654720870/" data-width="200" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></a>
+         <a href="https://twitter.com/IluvMysuru" title="Follow @IluvMysuru on Twitter" target="_blank" class="twitter" style="" data-show-count="false">Follow</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
         </li>
       </div>
     </ul>
@@ -121,7 +146,7 @@
       
       <!-- You only need this form and the form-register.css -->
       
-      <form class="form-register" method="post" action="#">
+      <form class="form-register" method="post" action="http://iluvmysuru.in/index.php/model/addhelp">
         <div class="form-register-with-email">
           <div class="form-white-background">
             <div class="form-row">

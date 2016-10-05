@@ -27,9 +27,9 @@ a[href^="tel:"] {
 }
 
 a[href^="tel:"]:before {
-  content: "\260e";
+  content: "\f098";
   margin-right: 0.5em;
-  color:orange;
+  color:#ffa500;
   font-family: FontAwesome;
 }
 
@@ -86,24 +86,35 @@ div#preheader .jumbotron li:nth-of-type(2) a{
 
 
 .finedine #placeblocks .text ul li:nth-of-type(2) > span:first-child, .finedine #placeblocks #id02 div p, .finedine #placeblocks #id05 h2 {
-    color: #b65c39 !important;
+    color: #b65c39 !important; font-weight:bold !important;
 }
 .history #placeblocks .text ul li:nth-of-type(2) > span:first-child, .history #placeblocks #id02 div p, .history #placeblocks #id05 h2 {
-    color: #c647bb !important;
+    color: #c647bb !important; font-weight:bold !important;
 }
 .hotelslodging #placeblocks .text ul li:nth-of-type(2) > span:first-child, .hotelslodging #placeblocks #id02 div p, .hotelslodging #placeblocks #id05 h2 {
-    color: #27aef5 !important;
+    color: #27aef5 !important; font-weight:bold !important;
 }
 .lifestyle #placeblocks .text ul li:nth-of-type(2) > span:first-child, .lifestyle #placeblocks #id02 div p, .lifestyle #placeblocks #id05 h2 {
-    color: #085ac0 !important;
+    color: #085ac0 !important; font-weight:bold !important;
 }
 .placesofinterest #placeblocks .text ul li:nth-of-type(2) > span:first-child, .placesofinterest #placeblocks #id02 div p, .placesofinterest #placeblocks #id05 h2 {
-    color: #448802 !important;
+    color: #448802 !important; font-weight:bold !important;
 }
 .upcomingevents #placeblocks .text ul li:nth-of-type(2) > span:first-child, .upcomingevents #placeblocks #id02 div p, .upcomingevents #placeblocks #id05 h2 {
-    color: #fbaa20 !important;
+    color: #fbaa20 !important; font-weight:bold !important;
+}
+.yogacenter #placeblocks .text ul li:nth-of-type(2) > span:first-child, .yogacenter #placeblocks #id02 div p, .yogacenter #placeblocks #id05 h2 {
+    color: #f7502a !important; font-weight:bold !important;
+}
+.localfavorites #placeblocks .text ul li:nth-of-type(2) > span:first-child, .localfavorites #placeblocks #id02 div p, .localfavorites #placeblocks #id05 h2 {
+    color: #14bec4 !important; font-weight:bold !important;
 }
 
+body > div.my-container > div > div.search-result > h2 {
+	font-weight:normal;
+	color:#ffffff;
+	font-size:1.15em;
+}
 /* Collapsible pannel styles */
 .main-content{
 	margin:0 auto;
@@ -151,13 +162,13 @@ div#preheader .jumbotron li:nth-of-type(2) a{
 #bm_ul {width:100% !important;}
 #bm_ul li {float:left !important; width:33.33333% !important; text-align:center !important; padding-top:10px !important;}
 #bm_ul li i {
-	font-size:1.25em;
+	font-size:1.5em;
 }
 .full {
 	width:100% !important;
 	}
 .tableWrap {
-    overflow-x: hidden;
+/*     overflow-x: hidden; */
 }
 .tableBlock {
     display: table;
@@ -248,7 +259,7 @@ ul {
 div#id04 div#details > div {
 	padding:10px !important;
 	}	
-div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details div span, div#id04 div#details div div,  div#id04 div#details p, div#id04 div#details p span, div#id04 div#details p div,  div#id04 div#details p div span {
+div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details div span, div#id04 div#details div div,  div#id04 div#details p, div#id04 div#details p span, div#id04 div#details p div,  div#id04 div#details p div span, #id05 div ul li {
 	color:#222222 !important; 
 	font-family: 'Abel', sans-serif !important;
 	font-size:16px !important; 
@@ -264,8 +275,21 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 	padding: 0;
 	overflow: hidden;
 }
-#id05 div ul li {float: none; padding-left:20px; color:#222222; font-size:1.25em;}
-#id05 h2 {color:#448802; font-family: 'Abel', sans-serif; font-size:1.25em; font-weight:bold; padding:10px;}
+ 
+#id05 h2, #id02 > div:nth-child(1) > p:nth-child(1) {
+	color:#448802; 
+	font-family: 'Abel', sans-serif; 
+	font-size:1.15em; 
+	font-weight:bold; 
+	padding:10px;
+}
+
+#id05 div ul li {
+    float: none;
+    padding-left: 20px;
+    color: #222222;
+    font-size: 1.25em;
+}
 
 .toggle {
 	padding: 20px;
@@ -331,9 +355,9 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
 #placeblocks ul { list-style-type: none; margin: 0;	padding: 0;	overflow: hidden;}
 #placeblocks li {float: left;}
 #placeblocks .img {width:80%;}
-#placeblocks ul li ul li:nth-of-type(2) {
-    background: url(../images/ratings_bg.png) no-repeat;
-    width: 68px;
+#placeblocks ul li ul li:nth-of-type(1) {
+    background: url(../images/ratings_bg.png) 0px 2px no-repeat;
+    width: 53px;
     height:16px;
 }
 #placeblocks ul li ul li:nth-of-type(2)::after{
@@ -364,6 +388,31 @@ div#id04 div#details > div, div#id04 div#details > div em, div#id04 div#details 
  float:right;
  } 
 /* Toggle Map styles ends*/
+
+.welcome-slider {
+	width:98%;
+	margin:5px auto 0px;
+}
+.welcome-slider #jssor_1{
+	background:white;
+}
+.welcome-slider #jssor_1 > div > div > div:nth-child(2) > div.tableWrap > div.tableBlock.full {
+	background:white;
+}
+#jssor_1 > div > div > div:nth-child(2) > div.tableWrap > div.tableBlock.full {
+	border-spacing:0px;
+}
+.welcome-slider #jssor_1 div div div div div.tableBlock.full div div h1 {
+	font-size:1.5em !important;
+	font-weight:bold !important;
+	text-align:left;
+}
+.welcome-slider #jssor_1 div div div div div.tableBlock.full div div p {
+	font-size:1.5em !important;
+	text-align:left;
+}
+
+
 
 .jssorb05 {
 	position: absolute;

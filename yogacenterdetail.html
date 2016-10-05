@@ -25,7 +25,7 @@
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqGeQYbKFe5SHRmLYypFG3Ctwtct0GzsQ&v=3.20&sensor=false"></script>
 
 
- 
+
 
 <style>
 
@@ -171,6 +171,7 @@
           <div class="clear"></div>
         </div>
       </div>
+
 </div>
 	<div class="bottommenu">
       <ul id="bm_ul">
@@ -197,7 +198,7 @@
 <script>
 	var xmlhttp = new XMLHttpRequest();
 	path = location.pathname.split(".")[0].split("/").pop();
-	var pathname = "history";
+	var pathname = "yogacenter";
 	pathPid = location.href.slice(-16);
 	url = "master/json/" + pathname + ".json";
 
@@ -214,9 +215,6 @@ xmlhttp.onreadystatechange=function() {
 }
 xmlhttp.open("GET", url, true);
 xmlhttp.send();
-
-
-function myFunction(response) {
 var arr = JSON.parse(response),
 	i, ratingstar, out = "<div>", out2 = "<div>", out3 = "<div id=\"details\">", maps = "<div id=\"map-canvas\">";
 
@@ -392,7 +390,7 @@ function getstars(ratingstars){
 		$(".search-result").empty().append('<h2 style="color:#FFFFFF;margin:10px 5px;">Search results related to the keyword "'+searchValue+'"</h2>'+searchResult);
 	}
 });
-i//f (path.includes("detail")) {
+//if (path.includes("detail")) {
 document.getElementById("id02").innerHTML = out2;
 document.getElementById("id03").innerHTML = maps;
 document.getElementById("id04").innerHTML = out3;
@@ -400,7 +398,7 @@ document.getElementById("id04").innerHTML = out3;
 //else {
 //document.getElementById("id01").innerHTML = out;
 //}
-}
+
 
 
 
@@ -423,7 +421,6 @@ document.getElementById("id04").innerHTML = out3;
 // 		}
 // });
 // });
-
 
 
 
